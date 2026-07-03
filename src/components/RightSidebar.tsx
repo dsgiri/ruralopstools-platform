@@ -4,7 +4,7 @@ import { Github, Bug, MessageSquare, Plus, Upload, BarChart2, BookOpen, HelpCirc
 
 export function RightSidebar() {
   return (
-    <div className="w-80 border-l border-gray-200 bg-white h-[calc(100vh-64px)] sticky top-16 overflow-y-auto hidden xl:block">
+    <div className="w-80 border-l border-gray-200 bg-white hidden xl:block">
       <div className="p-6 space-y-8">
         
         {/* Latest Announcements */}
