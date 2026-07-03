@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Purpose
-This repository builds niche digital tools and SEO landing pages for SOLVE.RURALUTILITYCOST.COM. The business focuses on underserved operational software and digital tools for farms, ranches, homesteads, and remote rural infrastructure. Typical products include Water Check OS, Pump Trouble Logger, Remote Inspection Proof Tool, Freeze Event Planner, and Fence Fault Tracker. 
+This repository builds niche digital tools and SEO landing pages for ruralopshq.com. The business focuses on underserved operational software and digital tools for farms, ranches, homesteads, and remote rural infrastructure. Typical products include Water Check OS, Pump Trouble Logger, Remote Inspection Proof Tool, Freeze Event Planner, and Fence Fault Tracker. 
 
 This file provides reusable, repo-level instructions to AI coding agents (like Cursor, Claude Code, etc.) to ensure consistent, safe, and practical execution.
 

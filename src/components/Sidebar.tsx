@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { navigation } from '../data';
-import { Leaf, Check, Github, User } from 'lucide-react';
+import { Leaf, Check, Github, User, Coffee } from 'lucide-react';
+import { SupportModal } from './SupportModal';
 
 export function Sidebar() {
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
+
   return (
     <div className="w-64 border-r border-gray-200 bg-white h-screen sticky top-0 flex flex-col hidden lg:flex">
       <div className="p-6 flex items-center gap-2 border-b border-gray-100">
@@ -48,9 +51,17 @@ export function Sidebar() {
               </li>
             ))}
           </ul>
-          <button className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm">
+          <button className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm mb-3">
             <Github className="w-4 h-4" />
             Star on GitHub
+          </button>
+          
+          <button 
+            onClick={() => setIsSupportOpen(true)}
+            className="w-full flex items-center justify-center gap-2 bg-white border border-green-200 hover:bg-green-100 hover:border-green-300 text-green-800 text-sm font-medium py-2 rounded-md transition-colors shadow-sm"
+          >
+            <Coffee className="w-4 h-4" />
+            Support This Project
           </button>
         </div>
       </div>
@@ -67,6 +78,8 @@ export function Sidebar() {
           <a href="#" className="text-xs text-green-700 font-medium hover:text-green-800">View Profile →</a>
         </div>
       </div>
+
+      <SupportModal isOpen={isSupportOpen} onClose={() => setIsSupportOpen(false)} />
     </div>
   );
 }

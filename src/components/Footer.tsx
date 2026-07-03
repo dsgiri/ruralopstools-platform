@@ -30,7 +30,7 @@ export function Footer() {
            <p className="text-xs text-gray-500 mt-0.5">Licensed under the MIT License.</p>
            
            <div className="flex items-center justify-center md:justify-start gap-4 mt-3">
-             <a href="#" className="text-gray-400 hover:text-gray-600"><Github className="w-4 h-4" /></a>
+             <a href="https://github.com/dsgiri/ruralopshq-platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Github className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><Twitter className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><Youtube className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><MessageSquare className="w-4 h-4" /></a>
