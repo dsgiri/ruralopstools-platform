@@ -1,0 +1,82 @@
+import {
+  Home,
+  BrainCircuit,
+  Calendar,
+  Tractor,
+  Settings,
+  DollarSign,
+  ShieldCheck,
+  Database,
+  Users,
+  BookOpen,
+  Github,
+  LifeBuoy,
+  TrendingUp,
+  HelpCircle,
+  BarChart2,
+  CloudSun,
+  Leaf,
+  Beef
+} from 'lucide-react';
+
+export const navigation = [
+  { name: 'Dashboard', icon: Home, current: true },
+  { name: 'Intelligence', icon: BrainCircuit, current: false },
+  { name: 'Planning', icon: Calendar, current: false },
+  { name: 'Agriculture', icon: Tractor, current: false },
+  { name: 'Operations', icon: Settings, current: false },
+  { name: 'Economics', icon: DollarSign, current: false },
+  { name: 'Compliance', icon: ShieldCheck, current: false, badge: 'Soon' },
+  { name: 'Tools & Data', icon: Database, current: false },
+  { name: 'Community', icon: Users, current: false },
+  { name: 'Docs', icon: BookOpen, current: false },
+  { name: 'GitHub', icon: Github, current: false },
+  { name: 'Support', icon: LifeBuoy, current: false },
+];
+
+export const summaryStats = [
+  { name: 'Projects', value: '24', change: '+12%', changeType: 'positive', icon: Home, color: 'bg-green-100 text-green-700' },
+  { name: 'Analyses', value: '156', change: '+18%', changeType: 'positive', icon: TrendingUp, color: 'bg-blue-100 text-blue-700' },
+  { name: 'Datasets', value: '32', change: '+8%', changeType: 'positive', icon: Database, color: 'bg-purple-100 text-purple-700' },
+  { name: 'Alerts', value: '7', change: '', changeType: 'neutral', icon: LifeBuoy, color: 'bg-orange-100 text-orange-700' }, // using LifeBuoy as placeholder for bell
+];
+
+export const apps = [
+  { name: 'Forecast', description: 'Trends & outlooks', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-50' },
+  { name: 'WhatIf', description: 'Scenario analysis', icon: HelpCircle, color: 'text-blue-600', bg: 'bg-blue-50' },
+  { name: 'Plan', description: 'Plan & budget', icon: Calendar, color: 'text-purple-600', bg: 'bg-purple-50' },
+  { name: 'Predictor', description: 'ML predictions', icon: BrainCircuit, color: 'text-teal-600', bg: 'bg-teal-50' },
+  { name: 'Weather', description: 'Weather insights', icon: CloudSun, color: 'text-orange-500', bg: 'bg-orange-50' },
+  { name: 'Soil', description: 'Soil & nutrients', icon: Leaf, color: 'text-yellow-700', bg: 'bg-yellow-50' },
+  { name: 'Livestock', description: 'Herd & animals', icon: Beef, color: 'text-orange-600', bg: 'bg-orange-50' },
+  { name: 'Carbon', description: 'Emissions & carbon', icon: Leaf, color: 'text-green-600', bg: 'bg-green-50' },
+  { name: 'Price', description: 'Prices & markets', icon: DollarSign, color: 'text-green-600', bg: 'bg-green-50' },
+  { name: 'More Tools', description: 'Browse all tools', icon: BarChart2, color: 'text-gray-600', bg: 'bg-gray-50' },
+];
+
+export const chartData = [
+  { name: 'Apr 21', projects: 32, analyses: 15, alerts: 5 },
+  { name: 'Apr 25', projects: 48, analyses: 25, alerts: 7 },
+  { name: 'Apr 28', projects: 52, analyses: 28, alerts: 6 },
+  { name: 'May 1', projects: 53, analyses: 30, alerts: 8 },
+  { name: 'May 5', projects: 58, analyses: 33, alerts: 10 },
+  { name: 'May 8', projects: 62, analyses: 38, alerts: 11 },
+  { name: 'May 12', projects: 68, analyses: 42, alerts: 12 },
+  { name: 'May 15', projects: 72, analyses: 44, alerts: 14 },
+  { name: 'May 19', projects: 78, analyses: 48, alerts: 16 },
+];
+
+export const recentActivity = [
+  { id: 1, title: 'Soil Analysis Completed', desc: 'Field 12A - Corn North', time: '2h ago', icon: Leaf, color: 'text-green-600', bg: 'bg-green-50' },
+  { id: 2, title: 'Forecast Report Generated', desc: 'Corn Price Outlook - Q2 2025', time: '5h ago', icon: TrendingUp, color: 'text-blue-600', bg: 'bg-blue-50' },
+  { id: 3, title: 'Weather Alert', desc: 'Freeze warning for Brazos County', time: '1d ago', icon: CloudSun, color: 'text-orange-500', bg: 'bg-orange-50' },
+  { id: 4, title: 'Dataset Updated', desc: 'USDA NASS - QuickStats', time: '2d ago', icon: Database, color: 'text-purple-600', bg: 'bg-purple-50' },
+  { id: 5, title: 'Project Shared', desc: 'Dairy Expansion Plan', time: '2d ago', icon: Users, color: 'text-green-600', bg: 'bg-green-50' },
+];
+
+export const announcements = [
+  { id: 1, title: 'RuralOpsHQ v1.0 Released 🎉', desc: 'The open source platform for rural intelligence is here.', date: 'May 20', icon: CloudSun },
+  { id: 2, title: 'New: Carbon Benchmarking Tool', desc: 'Track and reduce emissions on your farm.', date: 'May 18', icon: TrendingUp },
+  { id: 3, title: 'Community Update', desc: 'Thanks to 150+ contributors making this possible!', date: 'May 15', icon: Users },
+  { id: 4, title: 'USDA Data Integration', desc: 'New datasets added for better decision making.', date: 'May 12', icon: Database },
+];
