@@ -37,8 +37,8 @@ async function startServer() {
       let cancelUrl = `${baseUrl}/?session=cancel`;
 
       if (source && typeof source === 'string') {
-        successUrl = `https://${source}.ruralopshq.com?session=success`;
-        cancelUrl = `https://${source}.ruralopshq.com?session=cancel`;
+        successUrl = `https://${source}.ruralopstools.com?session=success`;
+        cancelUrl = `https://${source}.ruralopstools.com?session=cancel`;
       }
 
       const session = await stripe.checkout.sessions.create({
@@ -48,7 +48,7 @@ async function startServer() {
             price_data: {
               currency: "usd",
               product_data: {
-                name: "Support RuralOpsHQ",
+                name: "Support RuralOpsTools",
                 description: "Contribution to keep open-source tools running",
               },
               unit_amount: Math.round(Number(amount) * 100), // convert dollars to cents

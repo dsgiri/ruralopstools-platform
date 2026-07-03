@@ -35,7 +35,7 @@ export function SupportModal({ isOpen, onClose }: SupportModalProps) {
     if (typeof window !== 'undefined') {
       const hostname = window.location.hostname;
       const parts = hostname.split('.');
-      // If we are on a subdomain (e.g., soil.ruralopshq.com), extract it
+      // If we are on a subdomain (e.g., soil.ruralopstools.com), extract it
       if (parts.length > 2 && !hostname.includes('localhost')) {
         setSource(parts[0]);
       }
@@ -95,7 +95,7 @@ export function SupportModal({ isOpen, onClose }: SupportModalProps) {
         
         <div className="p-6">
           <p className="text-base font-medium text-gray-800 mb-6 leading-relaxed">
-            RuralOpsHQ is 100% free, open-source, and ad-free. If these tools save your operation time or money, consider pitching in a few bucks to help keep our servers running and live data feeds active.
+            RuralOpsTools is 100% free, open-source, and ad-free. If these tools save your operation time or money, consider pitching in a few bucks to help keep our servers running and live data feeds active.
           </p>
 
           {error && (

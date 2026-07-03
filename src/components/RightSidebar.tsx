@@ -35,7 +35,7 @@ export function RightSidebar() {
         <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
           <h3 className="font-semibold text-gray-900 mb-2">Join the Community</h3>
           <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-            RuralOpsHQ is built by people like you. Contribute, improve, and grow together.
+            RuralOpsTools is built by people like you. Contribute, improve, and grow together.
           </p>
           <div className="space-y-3">
             <a href="#" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
@@ -61,7 +61,7 @@ export function RightSidebar() {
         <div>
           <h3 className="font-semibold text-gray-900 mb-2">Open by Design</h3>
           <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-            Transparent. Extensible. Community-driven. That's the RuralOpsHQ way.
+            Transparent. Extensible. Community-driven. That's the RuralOpsTools way.
           </p>
           <button className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm">
             <Github className="w-4 h-4" />

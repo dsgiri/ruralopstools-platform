@@ -1,6 +1,6 @@
-# RuralOpsHQ Backlog
+# RuralOpsTools Backlog
 
-This document tracks the prioritized list of tools, features, and SEO landing pages to be built for RuralOpsHQ.
+This document tracks the prioritized list of tools, features, and SEO landing pages to be built for RuralOpsTools.
 
 ## Priority 0 (P0) - Core Operational Tools
 
@@ -19,5 +19,5 @@ This document tracks the prioritized list of tools, features, and SEO landing pa
 
 ## Priority 2 (P2) - Ecosystem Integrations
 
-- [ ] Update platform hub (`ruralutilitycost.com`) with links to the new tools.
+- [ ] Update platform hub (`ruralopstools.com`) with links to the new tools.
 - [ ] Add global navigation components for the newly deployed subdomains.

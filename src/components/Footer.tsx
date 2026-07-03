@@ -11,7 +11,7 @@ export function Footer() {
            <div className="flex items-center gap-2">
              <Leaf className="w-6 h-6 text-green-700" />
              <div>
-               <h1 className="font-bold text-lg leading-tight text-gray-900 tracking-tight">RuralOpsHQ</h1>
+               <h1 className="font-bold text-lg leading-tight text-gray-900 tracking-tight">RuralOpsTools</h1>
                <p className="text-[10px] text-gray-500 font-medium tracking-wide">Open Source. Built for Rural.</p>
              </div>
            </div>
@@ -26,11 +26,11 @@ export function Footer() {
 
         {/* Center Text */}
         <div className="text-center md:text-left">
-           <p className="text-xs text-gray-500 font-medium">RuralOpsHQ is open source software.</p>
+           <p className="text-xs text-gray-500 font-medium">RuralOpsTools is open source software.</p>
            <p className="text-xs text-gray-500 mt-0.5">Licensed under the MIT License.</p>
            
            <div className="flex items-center justify-center md:justify-start gap-4 mt-3">
-             <a href="https://github.com/dsgiri/ruralopshq-platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Github className="w-4 h-4" /></a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Github className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><Twitter className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><Youtube className="w-4 h-4" /></a>
              <a href="#" className="text-gray-400 hover:text-gray-600"><MessageSquare className="w-4 h-4" /></a>
@@ -43,7 +43,7 @@ export function Footer() {
              Made with <Heart className="w-3.5 h-3.5 text-green-600 fill-green-600" /> for rural communities
            </p>
            <p className="text-xs text-gray-500 mt-0.5">around the world.</p>
-           <p className="text-xs text-gray-400 mt-2">© 2026 RuralOpsHQ</p>
+           <p className="text-xs text-gray-400 mt-2">© 2026 RuralOpsTools</p>
         </div>
 
       </div>

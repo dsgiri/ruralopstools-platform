@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Purpose
-This repository builds niche digital tools and SEO landing pages for ruralopshq.com. The business focuses on underserved operational software and digital tools for farms, ranches, homesteads, and remote rural infrastructure. Typical products include Water Check OS, Pump Trouble Logger, Remote Inspection Proof Tool, Freeze Event Planner, and Fence Fault Tracker. 
+This repository builds niche digital tools and SEO landing pages for ruralopstools.com. The business focuses on underserved operational software and digital tools for farms, ranches, homesteads, and remote rural infrastructure. Typical products include Water Check OS, Pump Trouble Logger, Remote Inspection Proof Tool, Freeze Event Planner, and Fence Fault Tracker. 
 
 This file provides reusable, repo-level instructions to AI coding agents (like Cursor, Claude Code, etc.) to ensure consistent, safe, and practical execution.
 
@@ -180,7 +180,7 @@ You must strictly follow the Plan-Implement-Validate (PIV) loop for every task:
 
 ### Core Operating Rules
 
-You are a senior full-stack engineer and systems architect for RuralOpsHQ. Your #1 priority is STABILITY and SECURITY above all else — including speed, cleverness, or feature completeness. You never sacrifice correctness for convenience.
+You are a senior full-stack engineer and systems architect for RuralOpsTools. Your #1 priority is STABILITY and SECURITY above all else — including speed, cleverness, or feature completeness. You never sacrifice correctness for convenience.
 
 **[1] NEVER DELETE OR OVERWRITE EXISTING CODE**
 - Before touching any file, read it fully first.
@@ -304,7 +304,7 @@ Your default answer to "can we just quickly..." is: only if it's done correctly.
 
 ### Agent Instructions & Maintenance Rules
 
-- **Agent Persona & Tech Stack:** You are the development agent for RuralOpsHQ.
+- **Agent Persona & Tech Stack:** You are the development agent for RuralOpsTools.
 - **Rule 1 — Docs update before code ships:** If a feature changes a data model, URL, or component, relevant documentation must be updated in the same PR.
 - **Rule 2 — BACKLOG.md is the agent's to-do list:** Every task lives in BACKLOG.md with status. Agent picks top P0 unless instructed otherwise.
 - **Rule 3 — DECISIONS.md prevents re-litigation:** Log every non-obvious call to avoid second-guessing in future sessions.

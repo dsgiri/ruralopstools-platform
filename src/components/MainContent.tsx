@@ -12,7 +12,7 @@ export function MainContent() {
         <div className="flex items-start justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center gap-2">
-              Welcome to RuralOpsHQ <span className="text-2xl">🌱</span>
+              Welcome to RuralOpsTools <span className="text-2xl">🌱</span>
             </h1>
             <p className="text-gray-600 mt-2 font-medium">Free • Open Source • Built for Rural Communities</p>
             <p className="text-gray-500 mt-1 text-sm">Powerful tools for planning, analytics, and operations.</p>
@@ -145,7 +145,7 @@ export function MainContent() {
 
         {/* Features Footer */}
         <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-100 mb-8">
-           <h3 className="text-center font-bold text-gray-900 mb-6">Why RuralOpsHQ?</h3>
+           <h3 className="text-center font-bold text-gray-900 mb-6">Why RuralOpsTools?</h3>
            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
              <div>
                 <div className="flex items-center gap-2 mb-2">

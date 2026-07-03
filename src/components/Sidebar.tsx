@@ -11,7 +11,7 @@ export function Sidebar() {
       <div className="p-6 flex items-center gap-2 border-b border-gray-100">
         <Leaf className="w-8 h-8 text-green-700" />
         <div>
-          <h1 className="font-bold text-xl leading-tight text-gray-900 tracking-tight">RuralOpsHQ</h1>
+          <h1 className="font-bold text-xl leading-tight text-gray-900 tracking-tight">RuralOpsTools</h1>
           <p className="text-[10px] text-gray-500 font-medium tracking-wide">Open Source. Built for Rural.</p>
         </div>
       </div>
