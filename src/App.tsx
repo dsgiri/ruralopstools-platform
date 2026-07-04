@@ -9,10 +9,13 @@ import { Header } from './components/Header';
 import { MainContent } from './components/MainContent';
 import { RightSidebar } from './components/RightSidebar';
 import { Footer } from './components/Footer';
+import { Contact } from './components/Contact';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
-  const [activeItem, setActiveItem] = useState('Dashboard');
+  const [activeItem, setActiveItem] = useState(() => {
+    return window.location.pathname === '/contact' ? 'Contact' : 'Dashboard';
+  });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -27,6 +30,14 @@ export default function App() {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  useEffect(() => {
+    if (activeItem === 'Contact') {
+      window.history.replaceState({}, '', '/contact');
+    } else if (activeItem === 'Dashboard') {
+      window.history.replaceState({}, '', '/');
+    }
+  }, [activeItem]);
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">
@@ -45,6 +56,8 @@ export default function App() {
                  <MainContent />
                  <RightSidebar />
                </>
+             ) : activeItem === 'Contact' ? (
+               <Contact />
              ) : (
                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
                  <div className="w-16 h-16 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center mb-6">

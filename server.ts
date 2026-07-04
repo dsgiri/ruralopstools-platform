@@ -68,6 +68,41 @@ async function startServer() {
     }
   });
 
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const { name, email, message } = req.body;
+      const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+      
+      if (!accessKey) {
+        throw new Error("WEB3FORMS_ACCESS_KEY environment variable is required");
+      }
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name,
+          email,
+          message,
+        }),
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        res.json({ success: true });
+      } else {
+        res.status(400).json({ error: result.message || "Failed to send message" });
+      }
+    } catch (error: any) {
+      console.error("Contact form error:", error);
+      res.status(500).json({ error: error.message || "Internal Server Error" });
+    }
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

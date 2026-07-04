@@ -83,7 +83,7 @@ export function Sidebar({ activeItem, setActiveItem }: SidebarProps) {
             <p className="text-sm font-medium text-gray-900 truncate">DS Giri</p>
             <p className="text-xs text-gray-500 truncate">Contributor</p>
           </div>
-          <a href="#" className="text-xs text-green-700 font-medium hover:text-green-800">View Profile →</a>
+          <a href="https://github.com/dsgiri" target="_blank" rel="noopener noreferrer" className="text-xs text-green-700 font-medium hover:text-green-800">View Profile →</a>
         </div>
       </div>
 

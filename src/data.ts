@@ -11,6 +11,7 @@ import {
   BookOpen,
   Github,
   LifeBuoy,
+  Mail,
   TrendingUp,
   HelpCircle,
   BarChart2,
@@ -49,6 +50,7 @@ export const navigation = [
   { name: 'Community', icon: Users, current: false },
   { name: 'Docs', icon: BookOpen, current: false },
   { name: 'GitHub', icon: Github, current: false },
+  { name: 'Contact', icon: Mail, current: false },
   { name: 'Support', icon: LifeBuoy, current: false },
 ];
 
