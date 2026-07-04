@@ -44,6 +44,10 @@ RuralOpsTools consolidates 26+ specialized, serverless subdomains—covering wea
 - **Sunlight-Optimized Utility**: High-contrast, readability-focused UI optimized for outdoor field use.
 - **Open Source**: MIT licensed to allow developers and operators to seamlessly contribute, modify, or self-host.
 
+## Security
+
+**CRITICAL: Never commit secret keys, API tokens, or any sensitive credentials to the public codebase.** Always use environment variables (`.env` file) for configuration and ensure `.env` is included in your `.gitignore`.
+
 ## License
 
 Licensed under the MIT License.
