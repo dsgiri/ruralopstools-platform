@@ -6,13 +6,27 @@ import { SupportModal } from './SupportModal';
 interface SidebarProps {
   activeItem: string;
   setActiveItem: (item: string) => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function Sidebar({ activeItem, setActiveItem }: SidebarProps) {
+export function Sidebar({ activeItem, setActiveItem, isOpen, onClose }: SidebarProps) {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
 
   return (
-    <div className="w-64 border-r border-gray-200 bg-white h-screen sticky top-0 flex flex-col hidden lg:flex">
+    <>
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-gray-900/50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+      
+      <div className={`
+        fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out flex flex-col h-screen
+        lg:translate-x-0 lg:static lg:block
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+      `}>
       <div className="p-6 flex items-center gap-2 border-b border-gray-100">
         <Leaf className="w-8 h-8 text-green-700" />
         <div>
@@ -89,5 +103,6 @@ export function Sidebar({ activeItem, setActiveItem }: SidebarProps) {
 
       <SupportModal isOpen={isSupportOpen} onClose={() => setIsSupportOpen(false)} />
     </div>
+    </>
   );
 }

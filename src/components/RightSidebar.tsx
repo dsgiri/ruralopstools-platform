@@ -11,11 +11,11 @@ export function RightSidebar() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-gray-900">Latest Announcements</h3>
-            <a href="#" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
+            <a href="https://github.com/dsgiri/ruralopstools-platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
           </div>
           <div className="space-y-4">
             {announcements.map((item) => (
-              <div key={item.id} className="group cursor-pointer">
+              <a href="https://github.com/dsgiri/ruralopstools-platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" key={item.id} className="group cursor-pointer block">
                 <div className="flex gap-3">
                   <div className="mt-0.5">
                     <item.icon className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors" />
@@ -26,7 +26,7 @@ export function RightSidebar() {
                     <p className="text-[10px] text-gray-400 mt-1">{item.date}</p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -42,15 +42,15 @@ export function RightSidebar() {
               <Github className="w-4 h-4 text-green-600" />
               Star on GitHub
             </a>
-            <a href="#" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
+            <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
               <Bug className="w-4 h-4 text-green-600" />
               Report an Issue
             </a>
-            <a href="#" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
+            <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
               <MessageSquare className="w-4 h-4 text-green-600" />
               Request a Feature
             </a>
-            <a href="#" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
+            <a href="https://github.com/dsgiri/ruralopstools-platform/discussions" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
               <MessageSquare className="w-4 h-4 text-green-600" />
               Join Discussions
             </a>
@@ -74,16 +74,16 @@ export function RightSidebar() {
           <h3 className="font-semibold text-gray-900 mb-3">Quick Actions</h3>
           <div className="space-y-2">
             {[
-              { name: 'New Project', icon: Plus },
-              { name: 'Upload Data', icon: Upload },
-              { name: 'Create Analysis', icon: BarChart2 },
-              { name: 'View Documentation', icon: BookOpen },
-              { name: 'Get Help', icon: HelpCircle },
+              { name: 'New Project', icon: Plus, url: 'https://github.com/dsgiri/ruralopstools-platform/issues/new' },
+              { name: 'Upload Data', icon: Upload, url: 'https://github.com/dsgiri/ruralopstools-platform/issues/new' },
+              { name: 'Create Analysis', icon: BarChart2, url: 'https://github.com/dsgiri/ruralopstools-platform/issues/new' },
+              { name: 'View Documentation', icon: BookOpen, url: 'https://github.com/dsgiri/ruralopstools-platform#readme' },
+              { name: 'Get Help', icon: HelpCircle, url: 'https://github.com/dsgiri/ruralopstools-platform/discussions' },
             ].map((action) => (
-              <button key={action.name} className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg transition-colors group">
+              <a href={action.url} target="_blank" rel="noopener noreferrer" key={action.name} className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg transition-colors group">
                 <action.icon className="w-4 h-4 text-gray-400 group-hover:text-gray-600" />
                 {action.name}
-              </button>
+              </a>
             ))}
           </div>
         </div>

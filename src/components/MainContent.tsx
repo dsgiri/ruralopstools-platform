@@ -5,13 +5,13 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export function MainContent() {
   return (
-    <div className="flex-1 overflow-y-auto bg-white p-8">
+    <div className="flex-1 overflow-y-auto bg-white p-4 sm:p-8">
       <div className="max-w-5xl mx-auto">
         
         {/* Header Section */}
         <div className="flex items-start justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 tracking-tight flex items-center gap-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight flex items-center gap-2">
               Welcome to RuralOpsTools <span className="text-2xl">🌱</span>
             </h1>
             <p className="text-gray-600 mt-2 font-medium">Free • Open Source • Built for Rural Communities</p>
@@ -58,14 +58,14 @@ export function MainContent() {
               <h2 className="text-lg font-bold text-gray-900">Explore Tools</h2>
               <p className="text-sm text-gray-500">Pick a tool to get started. All free. All open source.</p>
             </div>
-            <a href="#" className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1">
+            <a href="https://github.com/dsgiri/ruralopstools-platform#ecosystem" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1">
               View all tools <ArrowRight className="w-4 h-4" />
             </a>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {tools.map((tool) => (
-              <a href={tool.url} key={tool.name} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded-xl p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
+              <a href={tool.url} key={tool.name} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
                 <div className="flex-1 flex flex-col items-center justify-center">
                    <tool.icon className={`w-8 h-8 mb-3 ${tool.color}`} />
                    <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
@@ -124,7 +124,7 @@ export function MainContent() {
           <div className="border border-gray-200 rounded-xl p-5 bg-white shadow-sm">
              <div className="flex items-center justify-between mb-4">
                <h2 className="font-bold text-gray-900">Recent Activity</h2>
-               <a href="#" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
+               <a href="https://github.com/dsgiri/ruralopstools-platform/commits/main" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
              </div>
              <div className="space-y-4 mt-6">
                 {recentActivity.map((activity) => (
@@ -144,9 +144,9 @@ export function MainContent() {
         </div>
 
         {/* Features Footer */}
-        <div className="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-100 mb-8">
+        <div className="mt-8 bg-gray-50 rounded-xl p-4 sm:p-6 border border-gray-100 mb-8">
            <h3 className="text-center font-bold text-gray-900 mb-6">Why RuralOpsTools?</h3>
-           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
              <div>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="text-green-600"><Tags className="w-5 h-5" /></div>

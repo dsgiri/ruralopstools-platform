@@ -13,6 +13,7 @@ import { Contact } from './components/Contact';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(() => {
     return window.location.pathname === '/contact' ? 'Contact' : 'Dashboard';
   });
@@ -46,9 +47,17 @@ export default function App() {
           ✓ Core Support Received. Thank you for keeping the infrastructure alive.
         </div>
       )}
-      <Sidebar activeItem={activeItem} setActiveItem={setActiveItem} />
-      <div className="flex-1 flex flex-col h-full relative">
-        <Header />
+      <Sidebar 
+        activeItem={activeItem} 
+        setActiveItem={(item) => {
+          setActiveItem(item);
+          setIsMobileMenuOpen(false);
+        }}
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+      <div className="flex-1 flex flex-col h-full relative min-w-0">
+        <Header onMenuClick={() => setIsMobileMenuOpen(true)} />
         <div className="flex-1 overflow-y-auto flex flex-col relative">
            <div className="flex flex-1">
              {activeItem === 'Dashboard' ? (

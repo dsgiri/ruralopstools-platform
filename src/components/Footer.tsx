@@ -17,10 +17,10 @@ export function Footer() {
            </div>
            
            <div className="hidden md:flex items-center gap-6 text-sm text-gray-600 font-medium">
-             <a href="#" className="hover:text-gray-900">About</a>
-             <a href="#" className="hover:text-gray-900">Blog</a>
-             <a href="#" className="hover:text-gray-900">Roadmap</a>
-             <a href="#" className="hover:text-gray-900">Contribute</a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform#readme" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">About</a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform/wiki" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Blog</a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform/projects" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Roadmap</a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Contribute</a>
            </div>
         </div>
 
@@ -31,9 +31,9 @@ export function Footer() {
            
            <div className="flex items-center justify-start gap-4 mt-3">
              <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Github className="w-4 h-4" /></a>
-             <a href="#" className="text-gray-400 hover:text-gray-600"><Twitter className="w-4 h-4" /></a>
-             <a href="#" className="text-gray-400 hover:text-gray-600"><Youtube className="w-4 h-4" /></a>
-             <a href="#" className="text-gray-400 hover:text-gray-600"><MessageSquare className="w-4 h-4" /></a>
+             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Twitter className="w-4 h-4" /></a>
+             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><Youtube className="w-4 h-4" /></a>
+             <a href="https://github.com/dsgiri/ruralopstools-platform/discussions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600"><MessageSquare className="w-4 h-4" /></a>
            </div>
         </div>
 
