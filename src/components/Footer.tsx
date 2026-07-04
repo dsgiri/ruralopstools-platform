@@ -8,16 +8,19 @@ export function Footer() {
         
         {/* Brand & Links */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
-           <div className="flex items-center gap-2">
+           <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
              <Leaf className="w-6 h-6 text-green-700" />
              <div>
                <h1 className="font-bold text-lg leading-tight text-gray-900 tracking-tight">RuralOpsTools</h1>
                <p className="text-[10px] text-gray-500 font-medium tracking-wide">Open Source. Built for Rural.</p>
              </div>
-           </div>
+           </a>
            
            <div className="hidden md:flex items-center gap-6 text-sm text-gray-600 font-medium">
-             <a href="https://github.com/dsgiri/ruralopstools-platform#readme" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">About</a>
+             <a href="/about" className="hover:text-gray-900">About</a>
+             <a href="/terms-of-use" className="hover:text-gray-900">Terms</a>
+             <a href="/privacy-policy" className="hover:text-gray-900">Privacy</a>
+             <a href="/disclaimer" className="hover:text-gray-900">Disclaimer</a>
              <a href="https://github.com/dsgiri/ruralopstools-platform/wiki" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Blog</a>
              <a href="https://github.com/dsgiri/ruralopstools-platform/projects" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Roadmap</a>
              <a href="https://github.com/dsgiri/ruralopstools-platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">Contribute</a>

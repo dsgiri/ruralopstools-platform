@@ -10,12 +10,22 @@ import { MainContent } from './components/MainContent';
 import { RightSidebar } from './components/RightSidebar';
 import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
+import { About } from './components/About';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfUse } from './components/TermsOfUse';
+import { Disclaimer } from './components/Disclaimer';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(() => {
-    return window.location.pathname === '/contact' ? 'Contact' : 'Dashboard';
+    const path = window.location.pathname;
+    if (path === '/contact') return 'Contact';
+    if (path === '/about') return 'About';
+    if (path === '/privacy' || path === '/privacy-policy') return 'PrivacyPolicy';
+    if (path === '/terms' || path === '/terms-of-use') return 'TermsOfUse';
+    if (path === '/disclaimer') return 'Disclaimer';
+    return 'Dashboard';
   });
 
   useEffect(() => {
@@ -33,11 +43,13 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (activeItem === 'Contact') {
-      window.history.replaceState({}, '', '/contact');
-    } else if (activeItem === 'Dashboard') {
-      window.history.replaceState({}, '', '/');
-    }
+    let path = '/';
+    if (activeItem === 'Contact') path = '/contact';
+    else if (activeItem === 'About') path = '/about';
+    else if (activeItem === 'PrivacyPolicy') path = '/privacy-policy';
+    else if (activeItem === 'TermsOfUse') path = '/terms-of-use';
+    else if (activeItem === 'Disclaimer') path = '/disclaimer';
+    window.history.replaceState({}, '', path);
   }, [activeItem]);
 
   return (
@@ -67,6 +79,14 @@ export default function App() {
                </>
              ) : activeItem === 'Contact' ? (
                <Contact />
+             ) : activeItem === 'About' ? (
+               <About />
+             ) : activeItem === 'PrivacyPolicy' ? (
+               <PrivacyPolicy />
+             ) : activeItem === 'TermsOfUse' ? (
+               <TermsOfUse />
+             ) : activeItem === 'Disclaimer' ? (
+               <Disclaimer />
              ) : (
                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
                  <div className="w-16 h-16 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center mb-6">

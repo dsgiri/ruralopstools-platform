@@ -27,13 +27,13 @@ export function Sidebar({ activeItem, setActiveItem, isOpen, onClose }: SidebarP
         lg:translate-x-0 lg:static lg:block
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
-      <div className="p-6 flex items-center gap-2 border-b border-gray-100">
+      <a href="/" className="p-6 flex items-center gap-2 border-b border-gray-100 hover:bg-gray-50 transition-colors">
         <Leaf className="w-8 h-8 text-green-700" />
         <div>
           <h1 className="font-bold text-xl leading-tight text-gray-900 tracking-tight">RuralOpsTools</h1>
           <p className="text-[10px] text-gray-500 font-medium tracking-wide">Open Source. Built for Rural.</p>
         </div>
-      </div>
+      </a>
 
       <div className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
         {navigation.map((item) => {
