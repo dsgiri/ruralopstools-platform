@@ -12,7 +12,7 @@ export function Header() {
           <input
             type="text"
             className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 bg-gray-50"
-            placeholder="Search apps, tools, docs..."
+            placeholder="Search tools, docs..."
           />
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
             <span className="text-xs text-gray-400 border border-gray-200 rounded px-1.5 py-0.5 bg-white font-mono">⌘ K</span>
@@ -25,7 +25,7 @@ export function Header() {
           <BookOpen className="w-4 h-4" />
           Docs
         </a>
-        <a href="#" className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+        <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-900 transition-colors">
           <Github className="w-4 h-4" />
           GitHub
         </a>

@@ -9,7 +9,7 @@ A free, fully open-source digital command center designed to streamline agricult
 
 RuralOpsTools consolidates 26+ specialized, serverless subdomains—covering weather telemetry, soil analysis, livestock economics, and transport routing—into a unified, high-visibility operational dashboard. 
 
-### Apps and Tools
+### Tools
 
 - **Platform:** Main ecosystem hub ([ruralopstools.com](https://ruralopstools.com) / [ruralopstools.com](https://ruralopstools.com))
 - **Forecast:** Trends & outlooks ([forecast.ruralopstools.com](https://forecast.ruralopstools.com))

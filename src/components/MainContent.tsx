@@ -1,5 +1,5 @@
 import React from 'react';
-import { summaryStats, apps, chartData, recentActivity } from '../data';
+import { summaryStats, tools, chartData, recentActivity } from '../data';
 import { Code, ArrowRight, Tags, Smile, Leaf } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -51,25 +51,25 @@ export function MainContent() {
           ))}
         </div>
 
-        {/* Explore Apps */}
+        {/* Explore Tools */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-lg font-bold text-gray-900">Explore Apps</h2>
+              <h2 className="text-lg font-bold text-gray-900">Explore Tools</h2>
               <p className="text-sm text-gray-500">Pick a tool to get started. All free. All open source.</p>
             </div>
             <a href="#" className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1">
-              View all apps <ArrowRight className="w-4 h-4" />
+              View all tools <ArrowRight className="w-4 h-4" />
             </a>
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {apps.map((app) => (
-              <a href={app.url} key={app.name} className="border border-gray-200 rounded-xl p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
+            {tools.map((tool) => (
+              <a href={tool.url} key={tool.name} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded-xl p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
                 <div className="flex-1 flex flex-col items-center justify-center">
-                   <app.icon className={`w-8 h-8 mb-3 ${app.color}`} />
-                   <h3 className="font-semibold text-gray-900 mb-1">{app.name}</h3>
-                   <p className="text-[11px] text-gray-500 mb-4">{app.description}</p>
+                   <tool.icon className={`w-8 h-8 mb-3 ${tool.color}`} />
+                   <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
+                   <p className="text-[11px] text-gray-500 mb-4">{tool.description}</p>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium text-green-700 group-hover:text-green-800 mt-auto">
                   Open <ArrowRight className="w-3 h-3" />

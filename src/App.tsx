@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [activeItem, setActiveItem] = useState('Dashboard');
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -34,13 +35,27 @@ export default function App() {
           ✓ Core Support Received. Thank you for keeping the infrastructure alive.
         </div>
       )}
-      <Sidebar />
+      <Sidebar activeItem={activeItem} setActiveItem={setActiveItem} />
       <div className="flex-1 flex flex-col h-full relative">
         <Header />
         <div className="flex-1 overflow-y-auto flex flex-col relative">
            <div className="flex flex-1">
-             <MainContent />
-             <RightSidebar />
+             {activeItem === 'Dashboard' ? (
+               <>
+                 <MainContent />
+                 <RightSidebar />
+               </>
+             ) : (
+               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
+                 <div className="w-16 h-16 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center mb-6">
+                   <span className="text-2xl">🚧</span>
+                 </div>
+                 <h2 className="text-2xl font-bold text-gray-900 mb-3">{activeItem}</h2>
+                 <p className="text-gray-500 max-w-sm mx-auto leading-relaxed">
+                   This module is currently under development. Check back soon for updates.
+                 </p>
+               </div>
+             )}
            </div>
            <Footer />
         </div>

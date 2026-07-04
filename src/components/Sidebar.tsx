@@ -3,7 +3,12 @@ import { navigation } from '../data';
 import { Leaf, Check, Github, User, Coffee } from 'lucide-react';
 import { SupportModal } from './SupportModal';
 
-export function Sidebar() {
+interface SidebarProps {
+  activeItem: string;
+  setActiveItem: (item: string) => void;
+}
+
+export function Sidebar({ activeItem, setActiveItem }: SidebarProps) {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
 
   return (
@@ -17,27 +22,30 @@ export function Sidebar() {
       </div>
 
       <div className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
-        {navigation.map((item) => (
-          <a
-            key={item.name}
-            href="#"
-            className={`flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
-              item.current
-                ? 'bg-green-700 text-white shadow-sm'
-                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-            }`}
-          >
-            <div className="flex items-center gap-3">
-              <item.icon className={`w-5 h-5 ${item.current ? 'text-green-100' : 'text-gray-400'}`} />
-              {item.name}
-            </div>
-            {item.badge && (
-              <span className="text-[10px] font-semibold bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">
-                {item.badge}
-              </span>
-            )}
-          </a>
-        ))}
+        {navigation.map((item) => {
+          const isActive = item.name === activeItem;
+          return (
+            <button
+              key={item.name}
+              onClick={() => setActiveItem(item.name)}
+              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                isActive
+                  ? 'bg-green-700 text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <item.icon className={`w-5 h-5 ${isActive ? 'text-green-100' : 'text-gray-400'}`} />
+                {item.name}
+              </div>
+              {item.badge && (
+                <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${isActive ? 'bg-green-800 text-green-100' : 'bg-gray-100 text-gray-500'}`}>
+                  {item.badge}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       <div className="p-4 border-t border-gray-100 bg-gray-50/50">
@@ -51,10 +59,10 @@ export function Sidebar() {
               </li>
             ))}
           </ul>
-          <button className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm mb-3">
+          <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm mb-3">
             <Github className="w-4 h-4" />
             Star on GitHub
-          </button>
+          </a>
           
           <button 
             onClick={() => setIsSupportOpen(true)}

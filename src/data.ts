@@ -59,7 +59,7 @@ export const summaryStats = [
   { name: 'Alerts', value: '7', change: '', changeType: 'neutral', icon: LifeBuoy, color: 'bg-orange-100 text-orange-700' }, // using LifeBuoy as placeholder for bell
 ];
 
-export const apps = [
+export const tools = [
   { name: 'Platform', description: 'Main ecosystem hub', icon: Layout, color: 'text-gray-700', bg: 'bg-gray-100', url: 'https://ruralopstools.com' },
   { name: 'Forecast', description: 'Trends & outlooks', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-50', url: 'https://forecast.ruralopstools.com' },
   { name: 'WhatIf', description: 'Scenario analysis', icon: HelpCircle, color: 'text-blue-600', bg: 'bg-blue-50', url: 'https://whatif.ruralopstools.com' },

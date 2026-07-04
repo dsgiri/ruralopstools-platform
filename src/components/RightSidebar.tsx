@@ -38,7 +38,7 @@ export function RightSidebar() {
             RuralOpsTools is built by people like you. Contribute, improve, and grow together.
           </p>
           <div className="space-y-3">
-            <a href="#" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
+            <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-700 hover:text-green-700 transition-colors">
               <Github className="w-4 h-4 text-green-600" />
               Star on GitHub
             </a>
@@ -63,10 +63,10 @@ export function RightSidebar() {
           <p className="text-xs text-gray-600 mb-4 leading-relaxed">
             Transparent. Extensible. Community-driven. That's the RuralOpsTools way.
           </p>
-          <button className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm">
+          <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 rounded-md transition-colors shadow-sm">
             <Github className="w-4 h-4" />
             View on GitHub
-          </button>
+          </a>
         </div>
 
         {/* Quick Actions */}
