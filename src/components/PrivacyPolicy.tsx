@@ -9,43 +9,57 @@ export function PrivacyPolicy() {
           <ShieldCheck className="w-10 h-10 text-green-700" />
           <div>
             <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Privacy Policy</h1>
-            <p className="text-gray-500 font-medium">How we protect your data and privacy.</p>
+            <p className="text-gray-500 font-medium">Last updated: July 2026</p>
           </div>
         </div>
         
         <div className="prose prose-green max-w-none text-gray-700">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 mt-6">1. Information We Collect</h2>
-          <p className="mb-4">
-            RuralOpsTools is designed with privacy as a core principle. As an open-source platform, we only collect the minimum amount of information necessary to operate the service. This may include:
-          </p>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
-            <li>Information you provide directly (e.g., when contacting us or using specific interactive features).</li>
-            <li>Basic analytics data (anonymized) to help us understand how the platform is used and to improve performance.</li>
-            <li>Payment information (processed securely through Stripe) if you choose to support the project. We do not store your credit card details on our servers.</li>
-          </ul>
-
-          <h2 className="text-xl font-bold text-gray-900 mb-4 mt-8">2. How We Use Your Information</h2>
-          <p className="mb-4">
-            The information we collect is used solely for the purpose of providing and improving the RuralOpsTools platform. We do not sell, rent, or trade your personal information to third parties. Your data is your data.
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-6">Overview</h2>
+          <p className="mb-6 leading-relaxed">
+            RuralOpsTools is a network of free tools (Pest, Poultry, Soil, and others) for rural operations, operated by Microtree LLC ("we," "us"). This policy covers ruralopstools.com and every tool subdomain in the network (e.g. pest.ruralopstools.com, poultry.ruralopstools.com).
           </p>
 
-          <h2 className="text-xl font-bold text-gray-900 mb-4 mt-8">3. Data Security</h2>
-          <p className="mb-4">
-            We implement industry-standard security measures to protect your information. Since the codebase is open-source, the security of our application can be independently verified by the community.
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">No accounts, anywhere in this network</h2>
+          <p className="mb-6 leading-relaxed">
+            None of our tools require sign-up, login, or a password. There is no central database of users.
           </p>
 
-          <h2 className="text-xl font-bold text-gray-900 mb-4 mt-8">4. Third-Party Services</h2>
-          <p className="mb-4">
-            We may use third-party services (such as Vercel for hosting, and Stripe for payments) that have their own privacy policies. We encourage you to review them as well.
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Data stored on your device</h2>
+          <p className="mb-6 leading-relaxed">
+            Anything you enter into a tool — calculator inputs, egg logs, scouting notes, favorites — is saved using your browser's local storage, on your own device. This data is never transmitted to us and is not accessible to us. It is also not shared between tools: what you save in Poultry stays in Poultry's local storage, separate from Pest, Soil, or any other subdomain. Clearing your browser data, switching browsers, or switching devices will remove it.
           </p>
 
-          <h2 className="text-xl font-bold text-gray-900 mb-4 mt-8">5. Changes to This Policy</h2>
-          <p className="mb-4">
-            We may update this Privacy Policy from time to time. We will notify users of any material changes by posting the new policy on this page.
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Cookies & advertising</h2>
+          <p className="mb-4 leading-relaxed">
+            We use cookies to operate the site and, where enabled, to serve advertising through Google AdSense. Google and its advertising partners may use cookies to serve ads based on your prior visits to this or other websites.
+          </p>
+          <p className="mb-6 leading-relaxed">
+            You can opt out of personalized advertising at <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline font-medium">Google Ads Settings</a> or <a href="https://aboutads.info" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline font-medium">aboutads.info</a>. You can also manage cookies through your browser settings or the cookie banner shown on your first visit to any tool.
           </p>
 
-          <p className="text-sm text-gray-500 mt-12 pt-4 border-t border-gray-200">
-            Last updated: July 4, 2026
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Analytics</h2>
+          <p className="mb-6 leading-relaxed">
+            We use aggregated analytics (such as Google Analytics) to understand which tools are used and how. This is aggregate usage data and is not linked to your identity by us.
+          </p>
+
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Third parties</h2>
+          <p className="mb-6 leading-relaxed">
+            This site and its tools may use third-party services, including Google Analytics and Google AdSense, which operate under their own privacy policies. See Google's Privacy & Terms at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:underline font-medium">policies.google.com/privacy</a>.
+          </p>
+
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Children's privacy</h2>
+          <p className="mb-6 leading-relaxed">
+            This site is not directed at children under 13, and we do not knowingly collect personal information from children.
+          </p>
+
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Changes to this policy</h2>
+          <p className="mb-6 leading-relaxed">
+            If this policy changes materially, the "last updated" date above will reflect it. Continued use of the site after a change constitutes acceptance of the updated policy.
+          </p>
+
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Contact</h2>
+          <p className="mb-6 leading-relaxed">
+            Questions about this policy: <a href="mailto:support@ruralopstools.com" className="text-green-700 hover:underline font-medium">support@ruralopstools.com</a>
           </p>
         </div>
       </div>
