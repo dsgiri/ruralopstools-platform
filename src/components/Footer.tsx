@@ -24,6 +24,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Resources</h3>
             <ul className="space-y-3 text-sm text-gray-600">
+              <li><a href="https://github.com/dsgiri/ruralopstools-platform/tree/main/docs" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Docs</a></li>
+              <li><a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">GitHub Repository</a></li>
               <li><a href="https://github.com/dsgiri/ruralopstools-platform/wiki" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Blog</a></li>
               <li><a href="https://github.com/dsgiri/ruralopstools-platform/projects" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Roadmap</a></li>
               <li><a href="https://github.com/dsgiri/ruralopstools-platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Contribute</a></li>
@@ -62,9 +64,6 @@ export function Footer() {
                 <span className="sr-only">Discussions</span>
               </a>
             </div>
-            <p className="mt-4 text-xs text-gray-500">
-              Licensed under the MIT License.
-            </p>
           </div>
         </div>
 

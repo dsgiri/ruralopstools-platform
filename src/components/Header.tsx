@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Search, BookOpen, Github, Sun, Moon, Globe, Menu, Check } from 'lucide-react';
+import { Search, Star, Pin, Sun, Moon, Globe, Menu, Check } from 'lucide-react';
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -44,6 +44,7 @@ export function Header({ onMenuClick }: HeaderProps) {
         <button onClick={onMenuClick} className="lg:hidden p-2 -ml-2 text-gray-500 hover:text-gray-900 rounded-md">
           <Menu className="w-6 h-6" />
         </button>
+        
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
@@ -61,18 +62,21 @@ export function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="flex items-center gap-3 sm:gap-6 text-sm text-gray-600 font-medium ml-4 sm:ml-6">
-        <a href="https://github.com/dsgiri/ruralopstools-platform/tree/main/docs" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
-          <BookOpen className="w-4 h-4" />
-          Docs
-        </a>
-        <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
-          <Github className="w-4 h-4" />
-          GitHub
-        </a>
+        <button className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
+          <Star className="w-4 h-4" />
+          Favorites
+        </button>
+        <button className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
+          <Pin className="w-4 h-4" />
+          My Pins
+        </button>
+        
         <div className="hidden md:block h-4 w-px bg-gray-200"></div>
+
         <button onClick={toggleTheme} title="Toggle theme" className="hover:text-gray-900 transition-colors text-gray-500">
           {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
         </button>
+
         <div className="relative">
           <button 
             onClick={() => setShowLangMenu(!showLangMenu)} 
