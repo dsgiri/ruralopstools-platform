@@ -3,7 +3,7 @@ import { summaryStats, tools, chartData, recentActivity } from '../data';
 import { Code, ArrowRight, Tags, Smile, Leaf } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-export function MainContent() {
+export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: string) => void }) {
   return (
     <div className="flex-1 overflow-y-auto bg-white p-4 sm:p-8">
       <div className="max-w-5xl mx-auto">
@@ -65,7 +65,7 @@ export function MainContent() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {tools.map((tool) => (
-              <a href={tool.url} key={tool.name} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
+              <div key={tool.name} onClick={() => onNavigateToTool && onNavigateToTool(tool.id)} className="border border-gray-200 rounded-xl p-4 sm:p-5 hover:border-green-300 hover:shadow-md transition-all cursor-pointer group bg-white text-center flex flex-col items-center">
                 <div className="flex-1 flex flex-col items-center justify-center">
                    <tool.icon className={`w-8 h-8 mb-3 ${tool.color}`} />
                    <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
@@ -74,7 +74,7 @@ export function MainContent() {
                 <div className="flex items-center gap-1 text-xs font-medium text-green-700 group-hover:text-green-800 mt-auto">
                   Open <ArrowRight className="w-3 h-3" />
                 </div>
-              </a>
+              </div>
             ))}
           </div>
           <div className="mt-4 text-center">

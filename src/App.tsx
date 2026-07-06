@@ -13,6 +13,9 @@ import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfUse } from './components/TermsOfUse';
+import { Favorites } from './components/Favorites';
+import { MyPins } from './components/MyPins';
+import { ToolDetails } from './components/ToolDetails';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
@@ -23,13 +26,23 @@ export default function App() {
     if (path === '/about') return 'About';
     if (path === '/privacy' || path === '/privacy-policy') return 'PrivacyPolicy';
     if (path === '/terms' || path === '/terms-of-use') return 'TermsOfUse';
+    if (path === '/favorites') return 'Favorites';
+    if (path === '/my-pins') return 'MyPins';
+    if (path.startsWith('/tool/')) return 'ToolDetails';
     return 'Dashboard';
+  });
+
+  const [activeToolId, setActiveToolId] = useState(() => {
+    const path = window.location.pathname;
+    if (path.startsWith('/tool/')) return path.split('/')[2];
+    return null;
   });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('session') === 'success') {
       setShowSuccessToast(true);
+      
       // Clean up the URL to prevent showing toast on refresh
       window.history.replaceState({}, document.title, window.location.pathname);
       
@@ -46,8 +59,11 @@ export default function App() {
     else if (activeItem === 'About') path = '/about';
     else if (activeItem === 'PrivacyPolicy') path = '/privacy-policy';
     else if (activeItem === 'TermsOfUse') path = '/terms-of-use';
+    else if (activeItem === 'Favorites') path = '/favorites';
+    else if (activeItem === 'MyPins') path = '/my-pins';
+    else if (activeItem === 'ToolDetails' && activeToolId) path = `/tool/${activeToolId}`;
     window.history.replaceState({}, '', path);
-  }, [activeItem]);
+  }, [activeItem, activeToolId]);
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">
@@ -56,6 +72,7 @@ export default function App() {
           ✓ Core Support Received. Thank you for keeping the infrastructure alive.
         </div>
       )}
+
       <Sidebar 
         activeItem={activeItem} 
         setActiveItem={(item) => {
@@ -65,15 +82,22 @@ export default function App() {
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
       />
+
       <div className="flex-1 flex flex-col h-full relative min-w-0">
-        <Header onMenuClick={() => setIsMobileMenuOpen(true)} />
+        <Header onMenuClick={() => setIsMobileMenuOpen(true)} onNavigate={setActiveItem} />
+        
         <div className="flex-1 overflow-y-auto flex flex-col relative">
            <div className="flex flex-1">
              {activeItem === 'Dashboard' ? (
                <>
-                 <MainContent />
+                 <MainContent onNavigateToTool={(id) => {
+                   setActiveToolId(id);
+                   setActiveItem('ToolDetails');
+                 }} />
                  <RightSidebar />
                </>
+             ) : activeItem === 'ToolDetails' && activeToolId ? (
+               <ToolDetails toolId={activeToolId} onBack={() => setActiveItem('Dashboard')} />
              ) : activeItem === 'Contact' ? (
                <Contact />
              ) : activeItem === 'About' ? (
@@ -82,6 +106,10 @@ export default function App() {
                <PrivacyPolicy />
              ) : activeItem === 'TermsOfUse' ? (
                <TermsOfUse />
+             ) : activeItem === 'Favorites' ? (
+               <Favorites />
+             ) : activeItem === 'MyPins' ? (
+               <MyPins />
              ) : (
                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
                  <div className="w-16 h-16 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center mb-6">

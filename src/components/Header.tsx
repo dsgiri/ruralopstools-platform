@@ -3,6 +3,7 @@ import { Search, Star, Pin, Sun, Moon, Globe, Menu, Check } from 'lucide-react';
 
 interface HeaderProps {
   onMenuClick?: () => void;
+  onNavigate?: (item: string) => void;
 }
 
 const LANGUAGES = [
@@ -11,7 +12,7 @@ const LANGUAGES = [
   { code: 'FR', name: 'Français' },
 ];
 
-export function Header({ onMenuClick }: HeaderProps) {
+export function Header({ onMenuClick, onNavigate }: HeaderProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [isDark, setIsDark] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
@@ -62,11 +63,11 @@ export function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="flex items-center gap-3 sm:gap-6 text-sm text-gray-600 font-medium ml-4 sm:ml-6">
-        <button className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
+        <button onClick={() => onNavigate?.('Favorites')} className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
           <Star className="w-4 h-4" />
           Favorites
         </button>
-        <button className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
+        <button onClick={() => onNavigate?.('MyPins')} className="hidden md:flex items-center gap-2 hover:text-gray-900 transition-colors">
           <Pin className="w-4 h-4" />
           My Pins
         </button>
