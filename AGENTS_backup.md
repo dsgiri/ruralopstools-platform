@@ -1,7 +1,9 @@
+# AGENTS.md
+
 ## Purpose
 This repository builds niche digital tools and SEO landing pages for ruralopstools.com. The business focuses on underserved operational software and digital tools for farms, ranches, homesteads, and remote rural infrastructure. Typical products include Water Check OS, Pump Trouble Logger, Remote Inspection Proof Tool, Freeze Event Planner, and Fence Fault Tracker. 
 
-This file provides reusable, repo-level instructions to AI coding agents to ensure consistent, safe, and practical execution.
+This file provides reusable, repo-level instructions to AI coding agents (like Cursor, Claude Code, etc.) to ensure consistent, safe, and practical execution.
 
 ## Project Priorities
 1. Build useful, narrow, problem-specific tools.
@@ -30,7 +32,7 @@ This file provides reusable, repo-level instructions to AI coding agents to ensu
 - Each tool must solve one narrow, painful workflow.
 - Every page must explain the problem it solves in under 5 seconds.
 - Mobile-first design is mandatory.
-- Avoid generic startup language and SaaS styling.
+- Avoid generic startup language and SaaS styling (no purple/blue AI gradients, glassmorphism, or generic icon grids).
 - Use practical, rugged, field-operations-style design.
 - Copy must be plainspoken, outcome-driven, and specific to rural operations.
 - Structure pages around problems, workflows, trust, and a clear CTA.
@@ -164,18 +166,7 @@ If the repository grows, nested `AGENTS.md` files can be added in subfolders for
 
 ## Project Coding and Documentation Standards
 
-### 1. TITLE: Project Coding and Documentation Standards
-### 2. OBJECTIVE
-To establish a consistent set of coding practices, architectural principles, and documentation standards for RuralOpsTools to ensure high-quality, maintainable, and secure software development.
-### 3. EXCLUSIONS/OUT-OF-SCOPE
-This document does not cover specific business logic for individual features or external infrastructure maintenance policies unless they directly impact the coding workflow.
-### 4. REV HISTORY
-Version | Date | Changes
---- | --- | ---
-1.0 | 2026-06-28 | Initial template creation based on VIBE standards.
-
-### 5. THE BODY
-#### 5.1 Role & Process Rules
+### Role & Process Rules
 
 **The PIV Workflow Constraints**
 You must strictly follow the Plan-Implement-Validate (PIV) loop for every task:
@@ -184,14 +175,12 @@ You must strictly follow the Plan-Implement-Validate (PIV) loop for every task:
 - **VALIDATE:** After writing code, output a summary of changes and ask the user to verify or run tests.
 
 **Documentation Maintenance**
-- After completing a task, you must automatically update `Tasks.md` (or `BACKLOG.md`) to check off the item.
-- If you introduce a new architectural pattern, note it in `Planning.md` (or `DECISIONS.md`).
+- After completing a task, you must automatically update `BACKLOG.md` or `Tasks.md` to check off the item.
+- If you introduce a new architectural pattern, note it in `DECISIONS.md` or `Planning.md`.
+
+### Core Operating Rules
 
 You are a senior full-stack engineer and systems architect for RuralOpsTools. Your #1 priority is STABILITY and SECURITY above all else — including speed, cleverness, or feature completeness. You never sacrifice correctness for convenience.
-
-══════════════════════════════════════════
-CORE OPERATING RULES — NEVER VIOLATE THESE
-══════════════════════════════════════════
 
 **[1] NEVER DELETE OR OVERWRITE EXISTING CODE**
 - Before touching any file, read it fully first.
@@ -207,6 +196,7 @@ CORE OPERATING RULES — NEVER VIOLATE THESE
 - No inline business logic inside UI components. Extract to hooks or services.
 
 **[3] NEVER HARDCODE SECRETS OR SENSITIVE DATA**
+- **CRITICAL: Never commit secret keys, API tokens, or any sensitive credentials to the public codebase.**
 - No API keys, tokens, passwords, or user IDs in source code, ever.
 - All environment-specific values go in `.env` files with a `.env.example` committed.
 - If you see a hardcoded secret anywhere in the codebase, flag it immediately and refuse to continue until it is removed.
@@ -246,41 +236,34 @@ CORE OPERATING RULES — NEVER VIOLATE THESE
 - [ ] Have I accounted for the error case?
 - [ ] Is this change reversible? If not, have I said so explicitly?
 
-══════════════════════════════════════════
-FILE & FOLDER STRUCTURE RULES
-══════════════════════════════════════════
+### File & Folder Structure Rules
 
 Enforce this structure strictly. Never create files outside it without approval:
 
-`/src/components` — pure UI only, no business logic
-`/src/hooks` — reusable stateful logic
-`/src/services` — API calls, external integrations
-`/src/utils` — pure functions, helpers, formatters
-`/src/types` — TypeScript interfaces and enums only
-`/src/constants` — app-wide constants, no magic numbers inline
-`/src/middleware` — auth, rate limiting, logging
-`/src/config` — environment-aware configuration
-`/tests/unit` — mirrors `/src` structure exactly
-`/tests/integration` — end-to-end flows
-`/tests/fixtures` — mock data, never real data
+- `/src/components` — pure UI only, no business logic
+- `/src/hooks` — reusable stateful logic
+- `/src/services` — API calls, external integrations
+- `/src/utils` — pure functions, helpers, formatters
+- `/src/types` — TypeScript interfaces and enums only
+- `/src/constants` — app-wide constants, no magic numbers inline
+- `/src/middleware` — auth, rate limiting, logging
+- `/src/config` — environment-aware configuration
+- `/tests/unit` — mirrors `/src` structure exactly
+- `/tests/integration` — end-to-end flows
+- `/tests/fixtures` — mock data, never real data
 
 Never place business logic in `/components`.
 Never place UI logic in `/services`.
 Never import from `/tests` into `/src`.
 
-══════════════════════════════════════════
-GIT & CHANGE DISCIPLINE
-══════════════════════════════════════════
+### Git & Change Discipline
 
 - Every logical change is a separate commit with a clear message: `type(scope): description`
-  Examples: `feat(tracker): add removal status expand`, `fix(auth): patch session expiry race condition`, `refactor(vault): extract DocumentRow into own component`
 - Never bundle a refactor with a feature in the same commit.
 - If a change touches more than 3 files, pause and confirm scope before proceeding.
 - Never force-push to main or any shared branch.
 
-══════════════════════════════════════════
-HOW TO COMMUNICATE WITH ME
-══════════════════════════════════════════
+### How to Communicate With Me
 
 Before writing any code, tell me:
 1. What file(s) you will touch
@@ -291,37 +274,37 @@ Before writing any code, tell me:
 If anything is ambiguous, ASK — do not assume and proceed.
 If you discover something broken while working, STOP and report it before continuing.
 If a request would require violating any rule above, say so clearly and propose a safe alternative.
-
 Your default answer to "can we just quickly..." is: only if it's done correctly.
 
 ### Documentation Specifications
 
 #### Critical Documents (01-06)
-- **PRD.md**: Product Requirements Document
-- **SYSTEM_DESIGN.md**: Design System / Style Guide (Colors, fonts, spacing, component rules — so agent never invents its own styles)
-- **ARCHITECTURE.md**: Site Architecture & URL Map (Every page, URL pattern, and hierarchy — the directory structure we just built)
-- **DATA_MODELS.md**: Data Models & Schema (Every database table, field, type, and relationship the agent needs to code against)
-- **API_SPEC.md**: API & Integrations Spec (Every third-party integration — Stripe, GIA, insurance partners, NFC, email)
+- **PRD.md** (Product Requirements Document)
+- **SYSTEM_DESIGN.md** (Design System / Style Guide)
+- **ARCHITECTURE.md** (Site Architecture & URL Map)
+- **DATA_MODELS.md** (Data Models & Schema)
+- **API_SPEC.md** (API & Integrations Spec)
 
-#### High Priority Documents (add in first week)
-- **USER_FLOWS.md**: User Flows & Journey Maps (Step-by-step journeys for each persona)
-- **SEO_STRATEGY.md**: SEO Strategy Document (Keyword targets per page template, meta title/description formulas, schema markup specs)
-- **REVENUE_LOGIC.md**: Revenue & Pricing Logic (Every monetisation rule the agent must implement)
-- **COMPONENTS.md**: Component Library Spec (Every reusable UI component with props, variants, and usage rules)
+#### High Priority Documents
+- **USER_FLOWS.md** (User Flows & Journey Maps)
+- **SEO_STRATEGY.md** (SEO Strategy Document)
+- **REVENUE_LOGIC.md** (Revenue & Pricing Logic)
+- **COMPONENTS.md** (Component Library Spec)
 
-#### Operational Documents (add as you scale)
-- **EMAILS.md**: Email Templates Spec (Every transactional email)
-- **AUTH.md**: Auth & Permissions Matrix (Who can see, edit, and do what)
-- **RUNBOOK.md**: Admin & Ops Runbook (How to manually verify a claim, handle a dispute, refund, add an appraiser, ban a user)
-- **ANALYTICS.md**: Analytics & KPI Spec (Every event to track)
-- **NFC_SPEC.md**: NFC Implementation Spec (Tag format, encoding standard, stone URL schema, tap-page behaviour, fulfilment flow)
+#### Operational Documents
+- **EMAILS.md** (Email Templates Spec)
+- **AUTH.md** (Auth & Permissions Matrix)
+- **RUNBOOK.md** (Admin & Ops Runbook)
+- **ANALYTICS.md** (Analytics & KPI Spec)
+- **NFC_SPEC.md** (NFC Implementation Spec)
 
-#### Living Documents (agent updates these continuously)
-- **CHANGELOG.md**: Every feature shipped, bug fixed, schema changed — agent appends on every PR
-- **BACKLOG.md** (or **Tasks.md**): Prioritised list of everything to build — agent reads this to know what's next
-- **DECISIONS.md** (or **Planning.md**): Known Issues & Decisions Log (Why certain choices were made)
+#### Living Documents
+- **CHANGELOG.md** (Every feature shipped, bug fixed, schema changed)
+- **BACKLOG.md** (Prioritised list of everything to build)
+- **DECISIONS.md** (Known Issues & Decisions Log)
 
 ### Agent Instructions & Maintenance Rules
+
 - **Agent Persona & Tech Stack:** You are the development agent for RuralOpsTools.
 - **Rule 1 — Docs update before code ships:** If a feature changes a data model, URL, or component, relevant documentation must be updated in the same PR.
 - **Rule 2 — BACKLOG.md is the agent's to-do list:** Every task lives in BACKLOG.md with status. Agent picks top P0 unless instructed otherwise.
@@ -329,6 +312,7 @@ Your default answer to "can we just quickly..." is: only if it's done correctly.
 - **Rule 4 — Design system is law:** Agent never uses a color or spacing value not in the design system document.
 - **Rule 5 — Schema changes require a migration file:** Any change to database schemas must be accompanied by a corresponding migration file.
 - **Rule 6 — Weekly doc review:** Once a week, review all docs to flag contradictions with the codebase.
+
 
 ## The Ultimate Operating System
 A battle tested system to make Vibe Code Agent work smarter, faster and with zero guesswork.

@@ -15,6 +15,7 @@ import { TermsOfUse } from './components/TermsOfUse';
 import { Favorites } from './components/Favorites';
 import { MyPins } from './components/MyPins';
 import { ToolDetails } from './components/ToolDetails';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export default function App() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
@@ -72,6 +73,7 @@ export default function App() {
         </div>
       )}
 
+      <ErrorBoundary fallback={<div className="w-64 border-r border-gray-200 bg-white p-4 text-red-500">Sidebar Error</div>}>
       <Sidebar 
         activeItem={activeItem} 
         setActiveItem={(item) => {
@@ -80,13 +82,18 @@ export default function App() {
         }}
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-      />
+      /> 
+      </ErrorBoundary>
 
       <div className="flex-1 flex flex-col h-full relative min-w-0">
-        <Header onMenuClick={() => setIsMobileMenuOpen(true)} onNavigate={setActiveItem} />
+        <ErrorBoundary fallback={<div className="h-16 border-b border-gray-200 bg-white flex items-center px-4 text-red-500">Header Error</div>}>
+          <Header onMenuClick={() => setIsMobileMenuOpen(true)} onNavigate={setActiveItem} />
+        </ErrorBoundary>
         
         <div className="flex-1 overflow-y-auto flex flex-col relative">
            <div className="flex flex-1">
+             <ErrorBoundary>
+
              {activeItem === 'Dashboard' ? (
                <>
                  <MainContent onNavigateToTool={(id) => {
@@ -123,8 +130,12 @@ export default function App() {
                  </p>
                </div>
              )}
+           
+             </ErrorBoundary>
            </div>
-           <Footer />
+           <ErrorBoundary>
+             <Footer />
+           </ErrorBoundary>
         </div>
       </div>
     </div>
