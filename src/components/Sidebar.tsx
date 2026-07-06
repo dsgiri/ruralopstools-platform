@@ -24,7 +24,7 @@ export function Sidebar({ activeItem, setActiveItem, isOpen, onClose }: SidebarP
       
       <div className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out flex flex-col h-screen
-        lg:translate-x-0 lg:static lg:block
+        lg:translate-x-0 lg:static lg:flex
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
       <a href="/" className="p-6 flex items-center gap-2 border-b border-gray-100 hover:bg-gray-50 transition-colors">
@@ -35,7 +35,7 @@ export function Sidebar({ activeItem, setActiveItem, isOpen, onClose }: SidebarP
         </div>
       </a>
 
-      <div className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+      <div className="flex-1 min-h-0 overflow-y-auto py-4 px-3 space-y-1">
         {navigation.map((item) => {
           const isActive = item.name === activeItem;
           return (

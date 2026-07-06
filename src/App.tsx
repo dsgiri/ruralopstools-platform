@@ -7,7 +7,6 @@ import React, { useEffect, useState } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { MainContent } from './components/MainContent';
-import { RightSidebar } from './components/RightSidebar';
 import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
@@ -27,7 +26,7 @@ export default function App() {
     if (path === '/privacy' || path === '/privacy-policy') return 'PrivacyPolicy';
     if (path === '/terms' || path === '/terms-of-use') return 'TermsOfUse';
     if (path === '/favorites') return 'Favorites';
-    if (path === '/my-pins') return 'MyPins';
+    if (path === '/my-pins') return 'My Pins';
     if (path.startsWith('/tool/')) return 'ToolDetails';
     return 'Dashboard';
   });
@@ -60,7 +59,7 @@ export default function App() {
     else if (activeItem === 'PrivacyPolicy') path = '/privacy-policy';
     else if (activeItem === 'TermsOfUse') path = '/terms-of-use';
     else if (activeItem === 'Favorites') path = '/favorites';
-    else if (activeItem === 'MyPins') path = '/my-pins';
+    else if (activeItem === 'My Pins') path = '/my-pins';
     else if (activeItem === 'ToolDetails' && activeToolId) path = `/tool/${activeToolId}`;
     window.history.replaceState({}, '', path);
   }, [activeItem, activeToolId]);
@@ -94,7 +93,7 @@ export default function App() {
                    setActiveToolId(id);
                    setActiveItem('ToolDetails');
                  }} />
-                 <RightSidebar />
+                 
                </>
              ) : activeItem === 'ToolDetails' && activeToolId ? (
                <ToolDetails toolId={activeToolId} onBack={() => setActiveItem('Dashboard')} />
@@ -111,7 +110,7 @@ export default function App() {
                    setActiveToolId(id);
                    setActiveItem('ToolDetails');
                  }} />
-             ) : activeItem === 'MyPins' ? (
+             ) : activeItem === 'My Pins' ? (
                <MyPins />
              ) : (
                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">

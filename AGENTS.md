@@ -313,8 +313,9 @@ Your default answer to "can we just quickly..." is: only if it's done correctly.
 - **Rule 5 — Schema changes require a migration file:** Any change to database schemas must be accompanied by a corresponding migration file.
 - **Rule 6 — Weekly doc review:** Once a week, review all docs to flag contradictions with the codebase.
 
+
 ## The Ultimate Operating System
-A battle tested system to make Claude Code work smarter, faster and with zero guesswork.
+A battle tested system to make Vibe Code Agent work smarter, faster and with zero guesswork.
 
 ### Workflow Orchestration
 

@@ -36,10 +36,12 @@ import {
   Truck,
   PawPrint,
   Hexagon
-, Trees, Bird, Sun, Fence, ClipboardCheck, ScrollText, Key, Stethoscope, Briefcase, MessageCircle,} from 'lucide-react';
+, Trees, Bird, Sun, Fence, ClipboardCheck, ScrollText, Key, Stethoscope, Briefcase, MessageCircle, Star, Pin } from 'lucide-react';
 
 export const navigation = [
   { name: 'Dashboard', icon: Home, current: true },
+  { name: 'Favorites', icon: Star, current: false },
+  { name: 'My Pins', icon: Pin, current: false },
   { name: 'Intelligence', icon: BrainCircuit, current: false },
   { name: 'Planning', icon: Calendar, current: false },
   { name: 'Agriculture', icon: Tractor, current: false },
@@ -49,9 +51,6 @@ export const navigation = [
   { name: 'Tools & Data', icon: Database, current: false },
   { name: 'Community', icon: Users, current: false },
   { name: 'Docs', icon: BookOpen, current: false },
-  { name: 'GitHub', icon: Github, current: false },
-  { name: 'Contact', icon: Mail, current: false },
-  { name: 'Support', icon: LifeBuoy, current: false },
 ];
 
 export const summaryStats = [
