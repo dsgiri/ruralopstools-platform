@@ -12,6 +12,7 @@ import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfUse } from './components/TermsOfUse';
+import { Partners } from './components/Partners';
 import { Favorites } from './components/Favorites';
 import { MyPins } from './components/MyPins';
 import { ToolDetails } from './components/ToolDetails';
@@ -26,6 +27,7 @@ export default function App() {
     if (path === '/about') return 'About';
     if (path === '/privacy' || path === '/privacy-policy') return 'PrivacyPolicy';
     if (path === '/terms' || path === '/terms-of-use') return 'TermsOfUse';
+    if (path === '/partners') return 'Partners';
     if (path === '/favorites') return 'Favorites';
     if (path === '/my-pins') return 'My Pins';
     if (path.startsWith('/tool/')) return 'ToolDetails';
@@ -59,6 +61,7 @@ export default function App() {
     else if (activeItem === 'About') path = '/about';
     else if (activeItem === 'PrivacyPolicy') path = '/privacy-policy';
     else if (activeItem === 'TermsOfUse') path = '/terms-of-use';
+    else if (activeItem === 'Partners') path = '/partners';
     else if (activeItem === 'Favorites') path = '/favorites';
     else if (activeItem === 'My Pins') path = '/my-pins';
     else if (activeItem === 'ToolDetails' && activeToolId) path = `/tool/${activeToolId}`;
@@ -112,6 +115,8 @@ export default function App() {
                <PrivacyPolicy />
              ) : activeItem === 'TermsOfUse' ? (
                <TermsOfUse />
+             ) : activeItem === 'Partners' ? (
+               <Partners />
              ) : activeItem === 'Favorites' ? (
                <Favorites onNavigateToTool={(id) => {
                    setActiveToolId(id);

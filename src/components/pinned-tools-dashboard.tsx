@@ -67,7 +67,7 @@ export default function PinnedToolsDashboard() {
                     <X className="w-6 h-6 stroke-[3]" />
                   </button>
                 </div>
-                <p className="font-medium text-sm leading-snug text-gray-700 group-hover:text-gray-300">
+                <p className="font-medium text-sm leading-snug text-gray-700 group-hover:text-gray-300 line-clamp-3">
                   {tool.description}
                 </p>
               </div>

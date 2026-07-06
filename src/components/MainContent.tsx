@@ -55,19 +55,19 @@ export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: stri
         <div className="mb-8">
           <h2 className="text-lg font-bold text-gray-900 mb-4">Quick Actions</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
+            <a href="https://github.com/dsgiri/RuralOpsTools-Platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
               <Plus className="w-5 h-5 group-hover:text-white text-gray-700" />
               <span className="font-bold uppercase text-sm tracking-wider">New Issues</span>
             </a>
-            <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
+            <a href="https://github.com/dsgiri/RuralOpsTools-Platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
               <Upload className="w-5 h-5 group-hover:text-white text-gray-700" />
               <span className="font-bold uppercase text-sm tracking-wider">Upload Data</span>
             </a>
-            <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
+            <a href="https://github.com/dsgiri/RuralOpsTools-Platform/issues/new" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
               <BarChart2 className="w-5 h-5 group-hover:text-white text-gray-700" />
               <span className="font-bold uppercase text-sm tracking-wider">Analysis</span>
             </a>
-            <a href="https://github.com/dsgiri/ruralopstools-platform/discussions" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
+            <a href="https://github.com/dsgiri/RuralOpsTools-Platform/discussions" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors group">
               <Smile className="w-5 h-5 group-hover:text-white text-gray-700" />
               <span className="font-bold uppercase text-sm tracking-wider">Get Help</span>
             </a>
@@ -81,7 +81,7 @@ export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: stri
               <h2 className="text-lg font-bold text-gray-900">Explore Tools</h2>
               <p className="text-sm text-gray-500">Pick a tool to get started. All free. All open source.</p>
             </div>
-            <a href="https://github.com/dsgiri/ruralopstools-platform#ecosystem" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1">
+            <a href="https://github.com/dsgiri/RuralOpsTools-Platform#ecosystem" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1">
               View all tools <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -92,7 +92,7 @@ export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: stri
                 <div className="flex-1 flex flex-col items-center justify-center">
                    <tool.icon className={`w-8 h-8 mb-3 ${tool.color}`} />
                    <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
-                   <p className="text-[11px] text-gray-500 mb-4">{tool.description}</p>
+                   <p className="text-[11px] text-gray-500 mb-4 line-clamp-3">{tool.description}</p>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium text-green-700 group-hover:text-green-800 mt-auto">
                   Open <ArrowRight className="w-3 h-3" />
@@ -111,11 +111,11 @@ export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: stri
           <div className="border border-gray-200 rounded-xl p-5 bg-white shadow-sm">
              <div className="flex items-center justify-between mb-4">
                <h2 className="font-bold text-gray-900">Latest Announcements</h2>
-               <a href="https://github.com/dsgiri/ruralopstools-platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
+               <a href="https://github.com/dsgiri/RuralOpsTools-Platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
              </div>
              <div className="space-y-4 mt-6">
                 {announcements.map((item) => (
-                  <a href="https://github.com/dsgiri/ruralopstools-platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" key={item.id} className="group cursor-pointer block">
+                  <a href="https://github.com/dsgiri/RuralOpsTools-Platform/discussions/categories/announcements" target="_blank" rel="noopener noreferrer" key={item.id} className="group cursor-pointer block">
                     <div className="flex gap-3">
                       <div className="mt-0.5">
                         <item.icon className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors" />
@@ -171,7 +171,7 @@ export function MainContent({ onNavigateToTool }: { onNavigateToTool?: (id: stri
           <div className="border border-gray-200 rounded-xl p-5 bg-white shadow-sm">
              <div className="flex items-center justify-between mb-4">
                <h2 className="font-bold text-gray-900">Recent Activity</h2>
-               <a href="https://github.com/dsgiri/ruralopstools-platform/commits/main" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
+               <a href="https://github.com/dsgiri/RuralOpsTools-Platform/commits/main" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-700 hover:text-green-800">View all</a>
              </div>
              <div className="space-y-4 mt-6">
                 {recentActivity.map((activity) => (

@@ -24,11 +24,11 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Resources</h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li><a href="https://github.com/dsgiri/ruralopstools-platform/tree/main/docs" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Docs</a></li>
-              <li><a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">GitHub Repository</a></li>
-              <li><a href="https://github.com/dsgiri/ruralopstools-platform/wiki" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Blog</a></li>
-              <li><a href="https://github.com/dsgiri/ruralopstools-platform/projects" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Roadmap</a></li>
-              <li><a href="https://github.com/dsgiri/ruralopstools-platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Contribute</a></li>
+              <li><a href="https://github.com/dsgiri/RuralOpsTools-Platform/tree/main/docs" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Docs</a></li>
+              <li><a href="https://github.com/dsgiri/RuralOpsTools-Platform" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">GitHub Repository</a></li>
+              <li><a href="https://github.com/dsgiri/RuralOpsTools-Platform/wiki" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Blog</a></li>
+              <li><a href="https://github.com/dsgiri/RuralOpsTools-Platform/projects" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Roadmap</a></li>
+              <li><a href="https://github.com/dsgiri/RuralOpsTools-Platform/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-700 transition-colors">Contribute</a></li>
             </ul>
           </div>
 
@@ -38,6 +38,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-600">
               <li><a href="/about" className="hover:text-green-700 transition-colors">About</a></li>
               <li><a href="/contact" className="hover:text-green-700 transition-colors">Contact</a></li>
+              <li><a href="/partners" className="hover:text-green-700 transition-colors">Partners</a></li>
               <li><a href="/terms-of-use" className="hover:text-green-700 transition-colors">Terms of Use</a></li>
               <li><a href="/privacy-policy" className="hover:text-green-700 transition-colors">Privacy Policy</a></li>
             </ul>
@@ -47,19 +48,19 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Connect & Community</h3>
             <div className="flex flex-col gap-3">
-              <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
+              <a href="https://github.com/dsgiri/RuralOpsTools-Platform/issues/new" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
                 <Bug className="w-4 h-4" /> Report an Issue
               </a>
-              <a href="https://github.com/dsgiri/ruralopstools-platform/issues/new" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
+              <a href="https://github.com/dsgiri/RuralOpsTools-Platform/issues/new" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
                 <Plus className="w-4 h-4" /> Request a Feature
               </a>
-              <a href="https://github.com/dsgiri/ruralopstools-platform/discussions" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
+              <a href="https://github.com/dsgiri/RuralOpsTools-Platform/discussions" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-700 transition-colors flex items-center gap-2">
                 <MessageSquare className="w-4 h-4" /> Join Discussions
               </a>
             </div>
             
             <div className="flex items-center gap-4 mt-6">
-              <a href="https://github.com/dsgiri/ruralopstools-platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 transition-colors">
+              <a href="https://github.com/dsgiri/RuralOpsTools-Platform" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 transition-colors">
                 <Github className="w-5 h-5" />
                 <span className="sr-only">GitHub</span>
               </a>

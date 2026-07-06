@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { tools } from '../data';
-import { ArrowLeft, ExternalLink, Bookmark, Star, Check } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Bookmark, Star, Check, Github } from 'lucide-react';
 
 interface ToolDetailsProps {
   toolId: string;
@@ -86,12 +86,21 @@ export function ToolDetails({ toolId, onBack }: ToolDetailsProps) {
                 <tool.icon className={`w-8 h-8 ${tool.color}`} />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black mb-4">
+                <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black mb-1">
                   {tool.name}
                 </h1>
-                <p className="text-xl text-gray-700 font-medium leading-relaxed max-w-2xl">
+                <a href={tool.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-medium mb-4 group">
+                  {cleanUrl}
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+                <p className="text-xl text-gray-700 font-medium leading-relaxed max-w-2xl mb-4">
                   {tool.description}
                 </p>
+                {tool.longDescription && (
+                  <p className="text-gray-600 leading-relaxed max-w-3xl">
+                    {tool.longDescription}
+                  </p>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -116,14 +125,26 @@ export function ToolDetails({ toolId, onBack }: ToolDetailsProps) {
             <div className="text-sm font-bold uppercase tracking-wider text-gray-500">
               Available Now • Free & Open Source
             </div>
-            <a 
-              href={tool.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-4 bg-green-600 text-white font-black uppercase tracking-widest hover:bg-green-700 hover:translate-y-[-2px] transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black w-full md:w-auto justify-center"
-            >
-              Launch Tool <ExternalLink className="w-5 h-5 stroke-[3]" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+              {tool.github && (
+                <a 
+                  href={tool.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-8 py-4 bg-white text-black font-black uppercase tracking-widest hover:bg-gray-100 hover:translate-y-[-2px] transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black w-full sm:w-auto justify-center"
+                >
+                  <Github className="w-5 h-5 stroke-[3]" /> Code
+                </a>
+              )}
+              <a 
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-8 py-4 bg-green-600 text-white font-black uppercase tracking-widest hover:bg-green-700 hover:translate-y-[-2px] transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black w-full sm:w-auto justify-center"
+              >
+                Launch Tool <ExternalLink className="w-5 h-5 stroke-[3]" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
