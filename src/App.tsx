@@ -107,7 +107,10 @@ export default function App() {
              ) : activeItem === 'TermsOfUse' ? (
                <TermsOfUse />
              ) : activeItem === 'Favorites' ? (
-               <Favorites />
+               <Favorites onNavigateToTool={(id) => {
+                   setActiveToolId(id);
+                   setActiveItem('ToolDetails');
+                 }} />
              ) : activeItem === 'MyPins' ? (
                <MyPins />
              ) : (

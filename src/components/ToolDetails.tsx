@@ -9,45 +9,42 @@ interface ToolDetailsProps {
 
 export function ToolDetails({ toolId, onBack }: ToolDetailsProps) {
   const tool = tools.find((t) => t.id === toolId);
-  const [isPinned, setIsPinned] = useState(false);
   const [showBookmarkToast, setShowBookmarkToast] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   useEffect(() => {
-    const getPinnedCookie = () => {
-      const match = document.cookie.match(/(?:^|; )pinned_tools=([^;]*)/);
-      return match ? match[1] : '';
-    };
-    const cookieVal = getPinnedCookie();
-    if (cookieVal) {
-      const pinnedIds = cookieVal.split(',').map((id) => id.trim()).filter(Boolean);
-      setIsPinned(pinnedIds.includes(toolId));
+    const localFavs = localStorage.getItem('local_favorites');
+    if (localFavs) {
+      try {
+        const parsed = JSON.parse(localFavs);
+        setIsFavorited(parsed.includes(toolId));
+      } catch (e) {}
     }
   }, [toolId]);
 
-  const togglePin = () => {
-    const getPinnedCookie = () => {
-      const match = document.cookie.match(/(?:^|; )pinned_tools=([^;]*)/);
-      return match ? match[1] : '';
-    };
-    const cookieVal = getPinnedCookie();
-    let pinnedIds = cookieVal ? cookieVal.split(',').map((id) => id.trim()).filter(Boolean) : [];
-
-    if (isPinned) {
-      pinnedIds = pinnedIds.filter((id) => id !== toolId);
-    } else {
-      if (!pinnedIds.includes(toolId)) {
-        pinnedIds.push(toolId);
-      }
-      setShowBookmarkToast(true);
-      setTimeout(() => setShowBookmarkToast(false), 5000);
+  const toggleFavorite = () => {
+    const localFavs = localStorage.getItem('local_favorites');
+    let parsed = [];
+    if (localFavs) {
+      try {
+        parsed = JSON.parse(localFavs);
+      } catch (e) {}
     }
-
-    const date = new Date();
-    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
-    document.cookie = `pinned_tools=${pinnedIds.join(',')};expires=${date.toUTCString()};path=/`;
-    setIsPinned(!isPinned);
+    
+    if (isFavorited) {
+      parsed = parsed.filter(id => id !== toolId);
+    } else {
+      if (!parsed.includes(toolId)) parsed.push(toolId);
+    }
+    
+    localStorage.setItem('local_favorites', JSON.stringify(parsed));
+    setIsFavorited(!isFavorited);
   };
 
+  const handleBookmarkClick = () => {
+    setShowBookmarkToast(true);
+    setTimeout(() => setShowBookmarkToast(false), 5000);
+  };
   if (!tool) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
@@ -99,21 +96,18 @@ export function ToolDetails({ toolId, onBack }: ToolDetailsProps) {
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <button 
-                onClick={togglePin}
-                className={`flex items-center gap-2 px-4 py-3 border-2 border-black font-bold uppercase text-sm tracking-wider transition-colors ${
-                  isPinned 
-                    ? 'bg-black text-white hover:bg-gray-800' 
-                    : 'bg-white text-black hover:bg-gray-100'
-                }`}
+                onClick={handleBookmarkClick}
+                className="flex items-center gap-2 px-4 py-3 border-2 border-black font-bold uppercase text-sm tracking-wider transition-colors bg-white text-black hover:bg-gray-100"
               >
-                {isPinned ? <Check className="w-4 h-4 stroke-[3]" /> : <Bookmark className="w-4 h-4 stroke-[3]" />}
-                {isPinned ? 'Pinned' : 'Bookmark'}
+                <Bookmark className="w-4 h-4 stroke-[3]" />
+                BOOKMARK
               </button>
               <button 
-                className="flex items-center justify-center w-12 h-12 border-2 border-black bg-white text-black hover:bg-yellow-400 transition-colors"
+                onClick={toggleFavorite}
+                className={`flex items-center justify-center w-12 h-12 border-2 border-black transition-colors ${isFavorited ? 'bg-yellow-400 text-black hover:bg-yellow-500' : 'bg-white text-black hover:bg-gray-100'}`}
                 title="Add to Favorites"
               >
-                <Star className="w-5 h-5 stroke-[3]" />
+                <Star className={`w-5 h-5 stroke-[3] ${isFavorited ? 'fill-black' : ''}`} />
               </button>
             </div>
           </div>
